@@ -54,10 +54,6 @@ If you load content and elements asynchronously please be aware that it is neces
 
 ```
 
-```Javascript
-$('.g-maps').asyncGoogleMaps({offset: -100, spinner: {remove: true}});
-``` 
-
 ## Features
 
 * load Google Maps asynchronously to get better Google PageSpeed Insights rating
