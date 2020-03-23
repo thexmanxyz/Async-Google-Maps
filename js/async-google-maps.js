@@ -125,4 +125,4 @@
 })( jQuery );
 
 // attach plugin to Google Maps containers, basic example
-// $('.g-maps').toTopButton({});
+// $('.g-maps').asyncGoogleMaps({});
