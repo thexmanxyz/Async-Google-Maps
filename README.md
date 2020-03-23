@@ -31,7 +31,7 @@ The plugin can be easily configured during the initialization and the following 
 
 ### Google Maps iframe
 
-To make this plugin work for your Google Maps `<iframe>` please change the `src`-attribute to `data-src` and add the class `g-maps` e.g.:
+To make this plugin working for your Google Maps `<iframe>` please change the `src`-attribute to `data-src` and add the class `g-maps` e.g.:
 
 ```HTML
 <iframe class="g-maps" data-src="{your-google-maps-url}" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
