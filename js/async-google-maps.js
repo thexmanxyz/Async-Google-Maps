@@ -66,7 +66,7 @@
     * spinner.delay: Time in milliseconds waited before the spinner is removed.
     * isInViewport: Custom function to determine if container is in viewport (callback).
     * removeSpinner: Custom function to define the spinner removal behavior (callback).
-    * triggerAsyncLoad: Custom function to define when the load check is performed (callback).
+    * triggerAsyncLoad: Custom function to define when the maps should be loaded (callback).
     * checkAndLoad: Custom function which calls the async load and check routine (callback).
     * beforeLoad: Custom function called before the async load was initiated (callback).
     * afterLoad: Custom function called after the async load was initiated (callback).

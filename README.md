@@ -24,7 +24,7 @@ The plugin can be easily configured during the initialization and the following 
     - `delay: 10000},` | Time in milliseconds waited before the spinner is removed.
 - `isInViewport: function(opts){ ... },` | Custom function to determine if container is in viewport (callback).
 - `removeSpinner: function(opts){ ... },` | Custom function to define the spinner removal behavior (callback).
-- `triggerAsyncLoad: function(opts){ ... },` | Custom function to define when the load check is performed (callback).
+- `triggerAsyncLoad: function(opts){ ... },` | Custom function to define when the maps should be loaded (callback).
 - `checkAndLoad: function(opts){ ... },` | Custom function which calls the async load and check routine (callback).
 - `beforeLoad: function(opts){ ... },` | Custom function called before the async load was initiated (callback).
 - `afterLoad: function(opts){ ... }` | Custom function called after the async load was initiated (callback).
