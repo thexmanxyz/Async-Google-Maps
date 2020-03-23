@@ -21,7 +21,8 @@
         $(opts.containers).each(function () {
             var $container = $(this);
        
-            // only load Google Maps if container is in viewport, data-src attribute exists and the src attribute is not set
+            // only load Google Maps if container is in viewport, 
+			// data-src attribute exists and the src attribute is not set
             // this prevents double loading of the same Google Maps iframe
             if (!$container.attr('src') && $container.attr('data-src')
                 && opts.isInViewport.call($container, opts)) {
