@@ -65,8 +65,8 @@
     * spinner.selector: CSS selector used to find the spinner container (starting at map parent element). 
     * spinner.delay: Time in milliseconds waited before the spinner is removed.
     * isInViewport: Custom function to determine if container is in viewport (callback).
-    * removeSpinner: Custom function to control and define the default spinner removal behavior (callback).
-    * triggerAsyncLoad: Custom function to define when the async load check is performed (callback).
+    * removeSpinner: Custom function to control and define the spinner removal behavior (callback).
+    * triggerAsyncLoad: Custom function to define when the load check is performed (callback).
     * checkAndLoad: Custom function which calls the async load and check routine (callback).
     * beforeLoad: Custom function called before the async load was initiated (callback).
     * afterLoad: Custom function called after the async load was initiated (callback).

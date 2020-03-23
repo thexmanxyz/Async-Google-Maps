@@ -23,15 +23,15 @@ The plugin can be easily configured during the initialization and the following 
 	- `selector: '.spinner-border',` | CSS selector used to find the spinner container (starting at map parent element). 
     - `delay: 10000},` | Time in milliseconds waited before the spinner is removed.
 - `isInViewport: function(opts){ ... },` | Custom function to determine if container is in viewport (callback).
-- `removeSpinner: function(opts){ ... },` | Custom function to control and define the default spinner removal behavior (callback).
-- `triggerAsyncLoad: function(opts){ ... },` | Custom function to define when the async load check is performed (callback).
+- `removeSpinner: function(opts){ ... },` | Custom function to control and define the spinner removal behavior (callback).
+- `triggerAsyncLoad: function(opts){ ... },` | Custom function to define when the load check is performed (callback).
 - `checkAndLoad: function(opts){ ... },` | Custom function which calls the async load and check routine (callback).
 - `beforeLoad: function(opts){ ... },` | Custom function called before the async load was initiated (callback).
 - `afterLoad: function(opts){ ... }` | Custom function called after the async load was initiated (callback).
 
 ### Google Maps iframe
 
-To make this plugin working for your Google Maps `<iframe>` please change the `src`-attribute to `data-src` and add the class g-maps e.g.:
+To make this plugin working for your Google Maps `<iframe>` please change the `src`-attribute to `data-src` and add the class `g-maps` e.g.:
 
 ```HTML
 <iframe class="g-maps" data-src="{your-google-maps-url}" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
