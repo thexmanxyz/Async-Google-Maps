@@ -47,7 +47,7 @@ $('.g-maps').asyncGoogleMaps({offset: -100, spinner: {remove: true}});
 
 ### Layout Reflow
 
-If you load content and elements asynchronously please be aware that it is necessary to reserve space for the container (Google Maps container). This is necessary to prevent that the page layout will be rearranged during loading. To counter this drawback please take a look at the following CSS:
+If you load content and elements asynchronously please be aware that it is necessary to reserve space for the Google Maps container. This is necessary to prevent container resizing which leads to a unpleasant rearrangement of the page layout during loading. To counter this drawback please take a look at the following CSS:
 
 ```CSS
 .g-maps { min-height: 400px; } // please take your default container height
