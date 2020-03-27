@@ -51,6 +51,9 @@
         // set containers containing maps
         opts.containers = this;
 
+        // attach spinner if necessary
+        opts.attachSpinner(opts);
+
         // add trigger event (scroll, resize)
         opts.triggerAsyncLoad(opts);
 
@@ -61,10 +64,17 @@
    /* default values
     *
     * offset: Offset in pixel. A negative offset will trigger loading earlier, a postive value later.
+	* spinner.attach: Defines whether a spinner should be attached automatically.
     * spinner.remove: Defines whether a spinner should be removed automatically after load.
-    * spinner.selector: CSS selector used to find the spinner container (starting at map parent element). 
+    * spinner.spinnerClass: CSS class added to the spinner container. 
+	* spinner.type: The spinner type which should be used. The following values are supported:
+	*  - 'bootstrap': Bootstrap spinner, requires version >= 4.2
+	*  - 'included': simple build-in CSS spinner
+	*  - 'custom': any custom spinner or library
+	* spinner.bootstrapSpinner: The Bootstrap spinner used. Either 'spinner-border' or 'spinner-grow'.
     * spinner.delay: Time in milliseconds waited before the spinner is removed.
     * isInViewport: Custom function to determine if container is in viewport (callback).
+	* attachSpinner: Custom function to define the spinner attach behavior (callback).
     * removeSpinner: Custom function to define the spinner removal behavior (callback).
     * triggerAsyncLoad: Custom function to define when the maps should be loaded (callback).
     * checkAndLoad: Custom function which calls the async load and check routine (callback).
@@ -75,8 +85,12 @@
     $.fn.asyncGoogleMaps.defaults = {
         offset: 0,
         spinner: {
+            attach: false,
             remove: false,
-            selector: '.spinner-border',
+            spinnerClass: 'async-gmaps-spinner',
+            type: 'bootstrap',
+            bootstrapSpinner: 'spinner-border',
+			customSpinner: '',
             delay: 10000
         },
 
@@ -101,11 +115,43 @@
 
             // remove spinner within parent container
             var hFunc = function() { 
-                $(this).parent().find(opts.spinner.selector).remove();
+                $(this).parent().find('.' + opts.spinner.spinnerClass).remove();
             };
 
             // wait a specific time in milliseconds before removing spinner
             setTimeout(hFunc.bind(this), opts.spinner.delay);
+        },
+
+        // attach a predefined spinner to the parent container of the map - can be user customized
+        attachSpinner: function(opts) {
+            var spinner = opts.spinner;
+			var $spinnerDiv;
+			
+            // if spinner should be attached
+            if(spinner.attach) {
+                
+                // iterate over all map containers
+                $(opts.containers).each(function () {
+
+					// create bootstrap spinner
+					if(spinner.type == 'bootstrap') {
+						
+						// create spinner container
+						$spinnerDiv = $('<div>').addClass(spinner.bootstrapSpinner + ' ' + spinner.spinnerClass).attr('role', 'status');
+						$spinnerDiv.prepend($('<span>').addClass('sr-only').html('Loading...'));
+						
+
+					// create included spinner
+					}else if(spinner.type == 'included') {
+						
+						// create spinner container
+						$spinnerDiv = $('<div>').addClass('simple-spinner' + ' ' + spinner.spinnerClass).attr('role', 'status');
+					}
+					
+					// prepend spinner container
+					$(this).parent().prepend($spinnerDiv);
+               });
+            }
         },
 
         // append trigger event - can be user customized
