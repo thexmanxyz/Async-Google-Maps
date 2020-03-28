@@ -1,6 +1,7 @@
+/* Default styles for centering spinner and built-in spinner */
 .async-gmaps-spinner {
-  position: absolute;
-  margin: auto;
+  position: absolute !important;
+  margin: auto !important;
   top:0;
   bottom: 0;
   left: 0;
@@ -29,3 +30,4 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+

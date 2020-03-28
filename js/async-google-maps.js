@@ -20,7 +20,7 @@
     function checkAndLoadMaps(opts) {
         $(opts.containers).each(function () {
             var $container = $(this);
-       
+
             // only load Google Maps if container is in viewport, 
             // data-src attribute exists and the src attribute is not set
             // this prevents double loading of the same Google Maps iframe
@@ -66,12 +66,13 @@
     * offset: Offset in pixel. A negative offset will trigger loading earlier, a postive value later.
     * spinner.attach: Defines whether a spinner should be attached automatically.
     * spinner.remove: Defines whether a spinner should be removed automatically after load.
-    * spinner.spinnerClass: CSS class added to the spinner container. 
     * spinner.type: The spinner type which should be used. The following values are supported:
     *  - 'bootstrap': Bootstrap spinner, requires version >= 4.2
     *  - 'included': simple build-in CSS spinner
     *  - 'custom': any custom spinner or library
-    * spinner.bootstrapSpinner: The Bootstrap spinner used. Either 'spinner-border' or 'spinner-grow'.
+    * spinner.spinnerClass: CSS class added to the spinner container or used for removal. 
+    * spinner.bsSpinnerClass: The Bootstrap spinner class. Either 'spinner-border' or 'spinner-grow'.
+    * spinner.customSpinner: Any custom spinner container passed as HTML can be used here.
     * spinner.delay: Time in milliseconds waited before the spinner is removed.
     * isInViewport: Custom function to determine if container is in viewport (callback).
     * attachSpinner: Custom function to define the spinner attach behavior (callback).
@@ -87,9 +88,9 @@
         spinner: {
             attach: false,
             remove: false,
+            type: 'included',
             spinnerClass: 'async-gmaps-spinner',
-            type: 'bootstrap',
-            bootstrapSpinner: 'spinner-border',
+            bsSpinnerClass: 'spinner-border',
             customSpinner: '',
             delay: 10000
         },
@@ -97,7 +98,7 @@
         // determine if container is in viewport - can be user customized
         // credits @ https://stackoverflow.com/a/33979503/2379196
         isInViewport: function (opts) {
-            
+
             // container bounds
             var containerTop = $(this).offset().top;
             var containerBottom = containerTop + $(this).outerHeight();
@@ -126,28 +127,33 @@
         attachSpinner: function(opts) {
             var spinner = opts.spinner;
             var $spinnerDiv;
-            
+
             // if spinner should be attached
             if(spinner.attach) {
-                
+
                 // iterate over all map containers
                 $(opts.containers).each(function () {
 
                     // create bootstrap spinner
                     if(spinner.type == 'bootstrap') {
-                        
+
                         // create spinner container
-                        $spinnerDiv = $('<div>').addClass(spinner.bootstrapSpinner + ' ' + spinner.spinnerClass).attr('role', 'status');
+                        $spinnerDiv = $('<div>').addClass(spinner.bsSpinnerClass + ' ' + spinner.spinnerClass).attr('role', 'status');
                         $spinnerDiv.prepend($('<span>').addClass('sr-only').html('Loading...'));
-                        
 
                     // create included spinner
                     }else if(spinner.type == 'included') {
-                        
+
                         // create spinner container
                         $spinnerDiv = $('<div>').addClass('simple-spinner' + ' ' + spinner.spinnerClass).attr('role', 'status');
+
+                    // create custom spinner
+                    }else if (spinner.type == 'custom') {
+
+                        // create custom container by passed HTML
+                        $spinnerDiv = $(spinner.customSpinner).addClass(spinner.spinnerClass);
                     }
-                    
+
                     // prepend spinner container
                     $(this).parent().prepend($spinnerDiv);
                });
@@ -168,7 +174,7 @@
         // after load initiated - can be user customized
         afterLoad: function(opts) {}
     };
- 
+
 })( jQuery );
 
 // attach plugin to Google Maps containers, basic example
