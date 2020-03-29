@@ -71,8 +71,8 @@ $('.g-maps').asyncGoogleMaps({
 If you want to use the basic build-in spinner, configure the plugin with the following parameters:
 
 ```Javascript
-$('.g-maps').asyncGoogleMaps(
-  {spinner: {
+$('.g-maps').asyncGoogleMaps({
+  spinner: {
     attach: true, 
     remove: true
   }
