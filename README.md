@@ -12,12 +12,12 @@ This project contains a simple and full configurable jQuery plugin which asynchr
    * **JS:** `<script src="js/async-google-maps.min.js"></script>`
    * **CSS:** `<link href="css/async-google-maps.min.css" rel="stylesheet">` (only necessary for spinner)
        * `async-google-maps-lio.min.css` for [Loading.io](https://loading.io/css/) pure CSS spinners
-       * `async-google-maps-cl.min.css` for [CSS-Loader](https://projects.lukehaas.me/css-loaders/) pure CSS spinners.
-       * `async-google-maps-all.min.css` includes all spinners but bigger footsprint.
+       * `async-google-maps-cl.min.css` for [CSS-Loader](https://projects.lukehaas.me/css-loaders/) pure CSS spinners
+       * `async-google-maps-all.min.css` includes all spinners but bigger footsprint
    * **SCSS:** if you want to use SCSS instead `@import 'async-google-maps.scss';` (only necessary for spinner)
        * `_async-google-maps-lio.scss` for [Loading.io](https://loading.io/css/) pure CSS spinners
-       * `_async-google-maps-cl.scss` for [CSS-Loader](https://projects.lukehaas.me/css-loaders/) pure CSS spinners.
-       * `_async-google-maps-all.scss` includes all spinners but bigger footsprint.
+       * `_async-google-maps-cl.scss` for [CSS-Loader](https://projects.lukehaas.me/css-loaders/) pure CSS spinners
+       * `_async-google-maps-all.scss` includes all spinners but bigger footsprint
 4. Initialize the plugin with basic values as follows
    * **Plugin Initialization:** `$('.g-maps').asyncGoogleMaps({});` or `jQuery('.g-maps').asyncGoogleMaps({});`
 5. If you want to further customize the appearance or behavior please take a closer look on the plugin parameters and their explanation listed in the next section.
