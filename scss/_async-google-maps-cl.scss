@@ -26,7 +26,8 @@ $background: #fff !default;
   /* CSS-Loader CSS spinner, credits @ https://github.com/lukehaas/css-loaders */
 
   /* load1 */
-  &.load1 {
+  &.load1, &.load1-small {
+
     &.loader,
     &.loader:before,
     &.loader:after {
@@ -70,49 +71,20 @@ $background: #fff !default;
 
   /* load1-small */
   &.load1-small {
+
     &.loader,
     &.loader:before,
     &.loader:after {
-      background:$primary;
-      -webkit-animation:load1 1s infinite ease-in-out;
-      animation:load1 1s infinite ease-in-out;
       width:0.75em;
-      height:4em;
     }
 
     &.loader {
-      color:$primary;
-      text-indent:-9999em;
-      margin:88px auto;
-      position:relative;
       font-size:6px;
-      -webkit-transform: translateZ(0);
-      -ms-transform: translateZ(0);
-      transform: translateZ(0);
-      -webkit-animation-delay:-0.16s;
-      animation-delay:-0.16s;
-
-      &:before,
-      &:after {
-        position:absolute;
-        top:0;
-        content:'';
-      }
-
-      &:before {
-        left:-1.5em;
-        -webkit-animation-delay:-0.32s;
-        animation-delay:-0.32s;
-      }
-
-      &:after {
-        left:1.5em;
-      }
     }
   }
 
   /* load2 */
-  &.load2 {
+  &.load2, &.load2-small {
 
     &.loader,
     &.loader:before,
@@ -170,61 +142,13 @@ $background: #fff !default;
   /* load2-small */
   &.load2-small {
 
-    &.loader,
-    &.loader:before,
-    &.loader:after {
-      border-radius:50%;
-    }
-
     &.loader {
-      color:$primary;
       font-size:8px;
-      text-indent:-99999em;
-      margin:55px auto;
-      position:relative;
-      width:10em;
-      height:10em;
-      box-shadow: inset 0 0 0 1em;
-      -webkit-transform: translateZ(0);
-      -ms-transform: translateZ(0);
-      transform: translateZ(0);
-
-      &:before,
-      &:after {
-        position:absolute;
-        content:'';
-      }
-
-      &:before {
-        width:5.2em;
-        height:10.2em;
-        background: $background;
-        border-radius: 10.2em 0 0 10.2em;
-        top:-0.1em;
-        left:-0.1em;
-        -webkit-transform-origin:5.1em 5.1em;
-        transform-origin:5.1em 5.1em;
-        -webkit-animation:load2 2s infinite ease 1.5s;
-        animation:load2 2s infinite ease 1.5s;
-      }
-
-      &:after {
-        width:5.2em;
-        height:10.2em;
-        background: $background;
-        border-radius: 0 10.2em 10.2em 0;
-        top:-0.1em;
-        left:4.9em;
-        -webkit-transform-origin:0.1em 5.1em;
-        transform-origin:0.1em 5.1em;
-        -webkit-animation:load2 2s infinite ease;
-        animation:load2 2s infinite ease;
-      }
     }
   }
 
   /* load3 */
-  &.load3 {
+  &.load3, &.load3-small {
 
     &.loader {
       font-size:10px;
@@ -274,51 +198,13 @@ $background: #fff !default;
   &.load3-small {
 
     &.loader {
-      font-size:10px;
-      margin:50px auto;
-      text-indent:-9999em;
       width:5.5em;
       height:5.5em;
-      border-radius:50%;
-      background: $primary;
-      background: -moz-linear-gradient(left,  rgba($primary,1) 10%, rgba($primary,0) 42%);
-      background: -webkit-linear-gradient(left,  rgba($primary,1) 10%,rgba($primary,0) 42%);
-      background: -o-linear-gradient(left,  rgba($primary,1) 10%,rgba($primary,0) 42%);
-      background: -ms-linear-gradient(left,  rgba($primary,1) 10%,rgba($primary,0) 42%);
-      background: linear-gradient(to right,  rgba($primary,1) 10%,rgba($primary,0) 42%);
-      position: relative;
-      -webkit-animation:load3 1.4s infinite linear;
-      animation:load3 1.4s infinite linear;
-      -webkit-transform: translateZ(0);
-      -ms-transform: translateZ(0);
-      transform: translateZ(0);
-
-      &:before {
-        width:50%;
-        height:50%;
-        background: $primary;
-        border-radius: 100% 0 0 0;
-        position:absolute;
-        top:0;
-        left:0;
-        content:'';
-      }
-
-      &:after {
-        background:$background;
-        width:75%;
-        height:75%;
-        border-radius:50%;
-        content:'';
-        margin:auto;
-        position: absolute;
-        top: 0; left: 0; bottom: 0; right: 0;
-      }
     }
   }
 
   /* load4 */
-  &.load4 {
+  &.load4, &.load4-small {
 
     &.loader {
       color:$primary;
@@ -341,24 +227,14 @@ $background: #fff !default;
   &.load4-small {
 
     &.loader {
-      color:$primary;
       font-size:10px;
-      margin:100px auto;
       width:0.75em;
       height:0.75em;
-      border-radius:50%;
-      position:relative;
-      text-indent:-9999em;
-      -webkit-animation:load4 1.3s infinite linear;
-      animation:load4 1.3s infinite linear;
-      -webkit-transform: translateZ(0);
-      -ms-transform: translateZ(0);
-      transform: translateZ(0);
     }
   }
 
   /* load5 */
-  &.load5 {
+  &.load5, &.load5-small {
 
     &.loader {
       margin:100px auto;
@@ -380,23 +256,14 @@ $background: #fff !default;
   &.load5-small {
 
     &.loader {
-      margin:100px auto;
       font-size:13px;
       width:0.75em;
       height:0.75em;
-      border-radius:50%;
-      position:relative;
-      text-indent:-9999em;
-      -webkit-animation:load5 1.1s infinite ease;
-      animation:load5 1.1s infinite ease;
-      -webkit-transform: translateZ(0);
-      -ms-transform: translateZ(0);
-      transform: translateZ(0);
     }
   }
 
   /* load6 */
-  &.load6 {
+  &.load6, &.load6-small {
 
     &.loader {
       color:$primary;
@@ -420,25 +287,12 @@ $background: #fff !default;
   &.load6-small {
 
     &.loader {
-      color:$primary;
       font-size:45px;
-      text-indent:-9999em;
-      overflow: hidden;
-      width:1em;
-      height:1em;
-      border-radius:50%;
-      margin:72px auto;
-      position:relative;
-      -webkit-transform: translateZ(0);
-      -ms-transform: translateZ(0);
-      transform: translateZ(0);
-      -webkit-animation:load6 1.7s infinite ease;
-      animation:load6 1.7s infinite ease;
     }
   }
 
   /* load7 */
-  &.load7 {
+  &.load7, &.load7-small {
 
     &.loader,
     &.loader:before,
@@ -486,51 +340,13 @@ $background: #fff !default;
   /* load7-small */
   &.load7-small {
 
-    &.loader,
-    &.loader:before,
-    &.loader:after {
-      border-radius:50%;
-      width:2.5em;
-      height:2.5em;
-      -webkit-animation-fill-mode: both;
-      animation-fill-mode: both;
-      -webkit-animation:load7 1.8s infinite ease-in-out;
-      animation:load7 1.8s infinite ease-in-out;
-    }
-
     &.loader {
-      color:$primary;
       font-size:5px;
-      margin:80px auto;
-      position:relative;
-      text-indent:-9999em;
-      -webkit-transform: translateZ(0);
-      -ms-transform: translateZ(0);
-      transform: translateZ(0);
-      -webkit-animation-delay:-0.16s;
-      animation-delay:-0.16s;
-
-      &:before,
-      &:after {
-        content:'';
-        position:absolute;
-        top:0;
-      }
-
-      &:before {
-        left:-3.5em;
-        -webkit-animation-delay:-0.32s;
-        animation-delay:-0.32s;
-      }
-
-      &:after {
-        left:3.5em;
-      }
     }
   }
 
   /* load8 */
-  &.load8 {
+  &.load8, &.load8-small {
 
     &.loader,
     &.loader:after {
@@ -559,27 +375,8 @@ $background: #fff !default;
   /* load8-small */
   &.load8-small {
 
-    &.loader,
-    &.loader:after {
-      border-radius:50%;
-      width:10em;
-      height:10em;
-    }
-
     &.loader {
-      margin:60px auto;
       font-size:5px;
-      position:relative;
-      text-indent:-9999em;
-      border-top:1.1em solid rgba($primary,0.2);
-      border-right:1.1em solid rgba($primary,0.2);
-      border-bottom:1.1em solid rgba($primary,0.2);
-      border-left:1.1em solid rgba($primary,1);
-      -webkit-transform: translateZ(0);
-      -ms-transform: translateZ(0);
-      transform: translateZ(0);
-      -webkit-animation:load8 1.1s infinite linear;
-      animation:load8 1.1s infinite linear;
     }
   }
 }
@@ -636,13 +433,13 @@ $background: #fff !default;
 @mixin load3-frames() {
 
   0% {
-  	-webkit-transform:rotate(0deg);
-  	transform:rotate(0deg);
+    -webkit-transform:rotate(0deg);
+    transform:rotate(0deg);
   }
 
   100% {
-  	-webkit-transform:rotate(360deg);
-  	transform:rotate(360deg);
+    -webkit-transform:rotate(360deg);
+    transform:rotate(360deg);
   }
 }
 
@@ -929,13 +726,13 @@ $background: #fff !default;
 @mixin load8-frames() {
 
   0% {
-  	-webkit-transform:rotate(0deg);
-  	transform:rotate(0deg);
+    -webkit-transform:rotate(0deg);
+    transform:rotate(0deg);
   }
 
   100% {
-  	-webkit-transform:rotate(360deg);
-  	transform:rotate(360deg);
+    -webkit-transform:rotate(360deg);
+    transform:rotate(360deg);
   }
 }
 
