@@ -35,11 +35,11 @@ The plugin can be easily configured during the initialization and the following 
         - `'bootstrap'` | Bootstrap spinner, requires version >= 4.2
         - `'custom'` | any custom spinner or library
     - `spinnerClass: 'async-gmaps-spinner',` | CSS class added to the spinner container or used for removal.
-    - `bsSpinnerClass: 'spinner-border',` | The Bootstrap spinner class. Either 'spinner-border' or 'spinner-grow'.
+    - `bsSpinnerClass: 'spinner-border',` | The Bootstrap spinner class. Either `'spinner-border'` or `'spinner-grow'`.
     - `customSpinner: '',` | Any custom spinner container passed as HTML can be used here.
     - `delay: 10000},` | Time in milliseconds waited before the spinner is removed.
 - `isInViewport: function(opts){ ... },` | Custom function to determine if container is in viewport (callback).
-- `setHeight: function(opts){ ... },` | Custom function that sets min-height for the Google Maps `<iframe>` (callback).
+- `setHeight: function(opts){ ... },` | Custom function that sets `min-height` for the Google Maps `<iframe>` (callback).
 - `attachSpinner: function(opts) { ... },` | Custom function to define the spinner attach behavior (callback).
 - `removeSpinner: function(opts){ ... },` | Custom function to define the spinner removal behavior (callback).
 - `triggerAsyncLoad: function(opts){ ... },` | Custom function to define when the maps should be loaded (callback).
@@ -47,7 +47,7 @@ The plugin can be easily configured during the initialization and the following 
 - `beforeLoad: function(opts){ ... },` | Custom function called before the async load was initiated (callback).
 - `afterLoad: function(opts){ ... }` | Custom function called after the async load was initiated (callback).
 
-### Google Maps iframe
+### Google Maps `<iframe>`
 
 To make this plugin working for your Google Maps `<iframe>` please change the `src`-attribute to `data-src` and add the class `g-maps` e.g.:
 
@@ -55,13 +55,39 @@ To make this plugin working for your Google Maps `<iframe>` please change the `s
 <iframe class="g-maps" data-src="{your-google-maps-url}" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
 ```
 
-### Example
+### Using Spinners / Examples
 
-The following example shows how you can specify plugin parameters to change the default offset and remove a pre-defined Boostrap 4 spinner.
+The following example shows how you can specify plugin parameters to change the default offset and remove a pre-defined spinner.
 
 ```Javascript
 $('.g-maps').asyncGoogleMaps({offset: -100, spinner: {remove: true}});
 ```
+
+If you want to use the basic build-in spinner, configure the plugin with the following parameters:
+
+```Javascript
+$('.g-maps').asyncGoogleMaps({spinner: {attach: true, remove: true}});
+```
+
+If you want to use a Bootstrap 4 spinner, configure the plugin with the following parameters:
+
+```Javascript
+$('.g-maps').asyncGoogleMaps({spinner: {attach: true, remove: true, type: 'bootstrap', bsSpinnerClass: 'spinner-grow' }});
+```
+
+Currently two spinner types are supported by Bootstrap `'spinner-border'` and `'spinner-grow'`. If you want to use the included Loading.io spinners, configure the plugin with the following paramters:
+
+```Javascript
+$('.g-maps').asyncGoogleMaps({spinner: {attach: true, remove: true, type: 'custom', customSpinner: '<div class="lds-dual-ring"></div>' }});
+```
+
+Please visit [Loading.io](https://loading.io/css/) to find out more on how you have to set the `customSpinner` parameter for each of the supported spinners. If you want to use the included CSS-Loader spinners,configure the plugin with the following parameters:
+
+```Javascript
+$('.g-maps').asyncGoogleMaps({spinner: {attach: true, remove: true, type: 'custom', customSpinner: '<div class="load1 loader">Loading...</div>' }});
+```
+
+If you want a different appearance for the CSS-Loader spinners change `load1` to `load2` ... `load8` or `load1-small` ... `load8-small`. More information about the supported CSS-Loader spinners can be found [here](https://projects.lukehaas.me/css-loaders/).
 
 ### Layout Reflow
 
@@ -70,7 +96,6 @@ If you load content and elements asynchronously please be aware that it is neces
 ```JS
 $('.g-maps').asyncGoogleMaps({fixHeight: true});
 ```
-
 
 or take a look at the following CSS:
 
@@ -88,8 +113,9 @@ or take a look at the following CSS:
   * attach / remove spinner
   * use different spinner types
     * basic included spinner
-	* Bootstrap spinners (requires version >= 4.2)
-	* custom spinner appliance ([Loading.io](https://loading.io/css/) and [CSS-Loader](https://projects.lukehaas.me/css-loaders/) pure CSS spinners included)
+    * Bootstrap spinners (requires version >= 4.2)
+    * custom spinner appliance ([Loading.io](https://loading.io/css/) and [CSS-Loader](https://projects.lukehaas.me/css-loaders/) pure CSS spinners included)
+    * or use any other pure CSS spinner you like
 * option to prevent layout reflow by auto detecting Google Maps fixed height
 * fully customizable through different callback methods at important execution points
 
