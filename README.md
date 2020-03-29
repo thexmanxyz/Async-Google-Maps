@@ -84,7 +84,7 @@ or take a look at the following CSS:
 
 * load Google Maps asynchronously to get better Google PageSpeed Insights rating
 * offset to load Google Maps at the desired scroll position
-* full-fledged spinner configuration used as placeholder during map loads
+* full-fledged spinner configuration used as placeholder while map loads
   * attach / remove spinner
   * use different spinner types
     * basic included spinner
