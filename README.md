@@ -6,10 +6,18 @@ This project contains a simple and full configurable jQuery plugin which asynchr
 * jQuery core library
 
 ## Download / Installation
-1. [Download v1.0.0](https://github.com/thexmanxyz/Async-Google-Maps/archive/v1.0.0.zip) of Async Google Maps
+1. [Download v1.1.0](https://github.com/thexmanxyz/Async-Google-Maps/archive/v1.0.0.zip) of Async Google Maps
 2. Extract the files and copy them to your website folder
-3. Define the JS resource file in your HTML page. You can also place the `<script>` tag after your `<body>` content. Basic resource import example:
+3. Define the CSS and JS resource files in your HTML page. You can also place the `<script>` tag after your `<body>` content. Basic resource import example:
    * **JS:** `<script src="js/async-google-maps.min.js"></script>`
+   * **CSS:** `<link href="css/async-google-maps.min.css" rel="stylesheet">` (only necessary for spinner)
+       * `async-google-maps-lio.min.css` for [Loading.io](https://loading.io/css/) pure CSS spinners
+       * `async-google-maps-cl.min.css` for [CSS-Loader](https://projects.lukehaas.me/css-loaders/) pure CSS spinners.
+       * `async-google-maps-all.min.css` includes all spinners but bigger footsprint.
+   * **SCSS:** if you want to use SCSS instead `@import 'async-google-maps.scss';` (only necessary for spinner)
+       * `_async-google-maps-lio.scss` for [Loading.io](https://loading.io/css/) pure CSS spinners
+       * `_async-google-maps-cl.scss` for [CSS-Loader](https://projects.lukehaas.me/css-loaders/) pure CSS spinners.
+       * `_async-google-maps-all.scss` includes all spinners but bigger footsprint.
 4. Initialize the plugin with basic values as follows
    * **Plugin Initialization:** `$('.g-maps').asyncGoogleMaps({});` or `jQuery('.g-maps').asyncGoogleMaps({});`
 5. If you want to further customize the appearance or behavior please take a closer look on the plugin parameters and their explanation listed in the next section.
@@ -17,12 +25,22 @@ This project contains a simple and full configurable jQuery plugin which asynchr
 ## Configuration and Parameters
 The plugin can be easily configured during the initialization and the following parameters are currently available. The listing contains the parameters together with their default values.
 
-- `offset: '0',` | Offset in pixel. A negative offset will trigger loading earlier, a postive value later.
+- `offset: 0,` | Offset in pixel. A negative offset will trigger loading earlier, a postive value later.
+- `fixHeight: false,` | Fix height of Google Maps `<iframe>` in dependence of height attribute.
 - `spinner: {` | Spinner options
-	- `remove: false,` | Defines whether a spinner should be removed automatically after load.
-	- `selector: '.spinner-border',` | CSS selector used to find the spinner container (starting at map parent element). 
+    - `attach: false,` | Defines whether a spinner should be attached automatically.
+    - `remove: false,` | Defines whether a spinner should be removed automatically after load.
+    - `type: 'included',` | The spinner type which should be used. The following values are supported:
+        - `'included'` | simple build-in CSS spinner
+        - `'bootstrap'` | Bootstrap spinner, requires version >= 4.2
+        - `'custom'` | any custom spinner or library
+    - `spinnerClass: 'async-gmaps-spinner',` | CSS class added to the spinner container or used for removal.
+    - `bsSpinnerClass: 'spinner-border',` | The Bootstrap spinner class. Either 'spinner-border' or 'spinner-grow'.
+    - `customSpinner: '',` | Any custom spinner container passed as HTML can be used here.
     - `delay: 10000},` | Time in milliseconds waited before the spinner is removed.
 - `isInViewport: function(opts){ ... },` | Custom function to determine if container is in viewport (callback).
+- `setHeight: function(opts){ ... },` | Custom function that sets min-height for the Google Maps `<iframe>` (callback).
+- `attachSpinner: function(opts) { ... },` | Custom function to define the spinner attach behavior (callback).
 - `removeSpinner: function(opts){ ... },` | Custom function to define the spinner removal behavior (callback).
 - `triggerAsyncLoad: function(opts){ ... },` | Custom function to define when the maps should be loaded (callback).
 - `checkAndLoad: function(opts){ ... },` | Custom function which calls the async load and check routine (callback).
@@ -47,7 +65,15 @@ $('.g-maps').asyncGoogleMaps({offset: -100, spinner: {remove: true}});
 
 ### Layout Reflow
 
-If you load content and elements asynchronously please be aware that it is necessary to reserve space for the Google Maps container. This is necessary to prevent container resizing which leads to a unpleasant rearrangement of the page layout during loading. To counter this drawback please take a look at the following CSS:
+If you load content and elements asynchronously please be aware that it is necessary to reserve space for the Google Maps container. This is necessary to prevent container resizing which leads to a unpleasant rearrangement of the page layout during loading. To counter this drawback please use the following plugin configuration:
+
+```JS
+$('.g-maps').asyncGoogleMaps({fixHeight: true});
+```
+
+
+or take a look at the following CSS:
+
 
 ```CSS
 .g-maps { min-height: 400px; } // please take your default container height
@@ -58,9 +84,13 @@ If you load content and elements asynchronously please be aware that it is neces
 
 * load Google Maps asynchronously to get better Google PageSpeed Insights rating
 * offset to load Google Maps at the desired scroll position
-* prepared to remove a pre-defined loading spinner (e.g. Bootstrap 4)
-  * customizable CSS selector
-  * delay spinner removal
+* full-fledged spinner configuration used as placeholder during map loads
+  * attach / remove spinner
+  * use different spinner types
+    * basic included spinner
+	* Bootstrap spinners (requires version >= 4.2)
+	* custom spinner appliance ([Loading.io](https://loading.io/css/) and [CSS-Loader](https://projects.lukehaas.me/css-loaders/) pure CSS spinners included)
+* option to prevent layout reflow by auto detecting Google Maps fixed height
 * fully customizable through different callback methods at important execution points
 
 ## Future Tasks
@@ -71,10 +101,16 @@ None
 
 ## Dependencies
 * [jQuery](https://jquery.com/)
+* [CSS-Loader](https://projects.lukehaas.me/css-loaders/)
+* [Loading.io CSS-Spinner](https://loading.io/css/)
 
 ## Credits
 
 Thanks to the jQuery team for this [great plugin tutorial](https://learn.jquery.com/plugins/basic-plugin-creation/).
+
+Thanks to [Loading.io](https://loading.io) for providing a fancy [set of spinners](https://github.com/loadingio/css-spinner/).
+
+Thanks to [Luke Haas](https://projects.lukehaas.me) for providing a fancy [set of spinners](https://github.com/lukehaas/css-loaders).
 
 ## by [thex](https://github.com/thexmanxyz)
 Copyright (c) 2020, free to use in personal and commercial software as per the [license](/LICENSE).

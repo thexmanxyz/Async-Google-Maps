@@ -1,3 +1,19 @@
+/******************************************************
+*                                                     *
+*   Async Google Maps - jQuery Plugin                 *
+*                                                     *
+*   Purpose: This project contains a simple and       *
+*            full configurable jQuery plugin which    *
+*            asynchronously loads one or multiple     *
+*            Google Maps instances located on a       *
+*            page. The load is triggered when the     *
+*            map is scrolled into viewport.           *
+*                                                     *
+*   Author: Andreas Kar (thex) <andreas.kar@gmx.at>   *
+*   Repository: https://git.io/JvD8G                  *
+*                                                     *
+******************************************************/
+
 /* Default styles for centering spinner and built-in spinner */
 .async-gmaps-spinner {
   position: absolute !important;

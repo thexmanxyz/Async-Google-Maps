@@ -71,10 +71,10 @@
     * spinner.attach: Defines whether a spinner should be attached automatically.
     * spinner.remove: Defines whether a spinner should be removed automatically after load.
     * spinner.type: The spinner type which should be used. The following values are supported:
-    *  - 'bootstrap': Bootstrap spinner, requires version >= 4.2
     *  - 'included': simple build-in CSS spinner
+    *  - 'bootstrap': Bootstrap spinner, requires version >= 4.2
     *  - 'custom': any custom spinner or library
-    * spinner.spinnerClass: CSS class added to the spinner container or used for removal. 
+    * spinner.spinnerClass: CSS class added to the spinner container or used for removal.
     * spinner.bsSpinnerClass: The Bootstrap spinner class. Either 'spinner-border' or 'spinner-grow'.
     * spinner.customSpinner: Any custom spinner container passed as HTML can be used here.
     * spinner.delay: Time in milliseconds waited before the spinner is removed.
