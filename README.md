@@ -60,34 +60,65 @@ To make this plugin working for your Google Maps `<iframe>` please change the `s
 The following example shows how you can specify plugin parameters to change the default offset and remove a pre-defined spinner.
 
 ```Javascript
-$('.g-maps').asyncGoogleMaps({offset: -100, spinner: {remove: true}});
+$('.g-maps').asyncGoogleMaps({
+  offset: -100,
+  spinner: {
+    remove: true
+  }
+});
 ```
 
 If you want to use the basic build-in spinner, configure the plugin with the following parameters:
 
 ```Javascript
-$('.g-maps').asyncGoogleMaps({spinner: {attach: true, remove: true}});
+$('.g-maps').asyncGoogleMaps(
+  {spinner: {
+    attach: true, 
+    remove: true
+  }
+});
 ```
 
 If you want to use a Bootstrap 4 spinner, configure the plugin with the following parameters:
 
 ```Javascript
-$('.g-maps').asyncGoogleMaps({spinner: {attach: true, remove: true, type: 'bootstrap', bsSpinnerClass: 'spinner-grow' }});
+$('.g-maps').asyncGoogleMaps({
+  spinner: {
+    attach: true, 
+    remove: true, 
+    type: 'bootstrap', 
+    bsSpinnerClass: 'spinner-grow'
+  }
+});
 ```
 
 Currently two spinner types are supported by Bootstrap `'spinner-border'` and `'spinner-grow'`. If you want to use the included Loading.io spinners, configure the plugin with the following paramters:
 
 ```Javascript
-$('.g-maps').asyncGoogleMaps({spinner: {attach: true, remove: true, type: 'custom', customSpinner: '<div class="lds-dual-ring"></div>' }});
+$('.g-maps').asyncGoogleMaps({
+  spinner: {
+    attach: true,
+    remove: true,
+    type: 'custom',
+    customSpinner: '<div class="lds-dual-ring"></div>'
+  }
+});
 ```
 
 Please visit [Loading.io](https://loading.io/css/) to find out more on how you have to set the `customSpinner` parameter for each of the supported spinners. If you want to use the included CSS-Loader spinners,configure the plugin with the following parameters:
 
 ```Javascript
-$('.g-maps').asyncGoogleMaps({spinner: {attach: true, remove: true, type: 'custom', customSpinner: '<div class="load1 loader">Loading...</div>' }});
+$('.g-maps').asyncGoogleMaps({
+  spinner: {
+    attach: true,
+    remove: true,
+    type: 'custom',
+    customSpinner: '<div class="load1 loader">Loading...</div>'
+  }
+});
 ```
 
-If you want a different appearance for the CSS-Loader spinners change `load1` to `load2` ... `load8` or `load1-small` ... `load8-small`. More information about the supported CSS-Loader spinners can be found [here](https://projects.lukehaas.me/css-loaders/).
+If you want a different appearance for the CSS-Loader spinners change `load1` to `load2` - `load8` or `load1-small` - `load8-small`. More information about the supported CSS-Loader spinners can be found [here](https://projects.lukehaas.me/css-loaders/).
 
 ### Layout Reflow
 
