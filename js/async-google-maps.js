@@ -51,6 +51,9 @@
         // set containers containing maps
         opts.containers = this;
 
+        // attach inline min-height
+        opts.setHeight(opts);
+
         // attach spinner if necessary
         opts.attachSpinner(opts);
 
@@ -64,6 +67,7 @@
    /* default values
     *
     * offset: Offset in pixel. A negative offset will trigger loading earlier, a postive value later.
+    * fixHeight: Fix height of Google Maps <iframe> in dependence of height attribute.
     * spinner.attach: Defines whether a spinner should be attached automatically.
     * spinner.remove: Defines whether a spinner should be removed automatically after load.
     * spinner.type: The spinner type which should be used. The following values are supported:
@@ -75,6 +79,7 @@
     * spinner.customSpinner: Any custom spinner container passed as HTML can be used here.
     * spinner.delay: Time in milliseconds waited before the spinner is removed.
     * isInViewport: Custom function to determine if container is in viewport (callback).
+    * setHeight: Custom function that sets the min-height for the Google Maps <iframe> (callback).
     * attachSpinner: Custom function to define the spinner attach behavior (callback).
     * removeSpinner: Custom function to define the spinner removal behavior (callback).
     * triggerAsyncLoad: Custom function to define when the maps should be loaded (callback).
@@ -85,6 +90,7 @@
     */
     $.fn.asyncGoogleMaps.defaults = {
         offset: 0,
+        fixHeight: false,
         spinner: {
             attach: false,
             remove: false,
@@ -109,6 +115,21 @@
 
             // detect if container is in viewport
             return containerBottom > viewportTop && containerTop + opts.offset < viewportBottom;
+        },
+
+        // automatically attach inline min-height to prevent reflow
+        setHeight: function(opts) {
+            if(opts.fixHeight) {
+
+                // iterate over all map containers
+                $(opts.containers).each(function () {
+                    
+                    var height = $(this).attr('height');
+                    if(typeof height !== 'undefined') {
+                        $(this).attr('style', 'min-height:' + height + 'px;');
+                    }
+                });
+            }
         },
 
         // remove a predefined spinner from the parent container of the map - can be user customized
@@ -156,7 +177,7 @@
 
                     // prepend spinner container
                     $(this).parent().prepend($spinnerDiv);
-               });
+                });
             }
         },
 

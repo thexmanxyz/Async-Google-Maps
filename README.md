@@ -64,8 +64,7 @@ If you load content and elements asynchronously please be aware that it is neces
 * fully customizable through different callback methods at important execution points
 
 ## Future Tasks
-- [ ] automatically attach spinner (Bootstrap 4 and classic)
-- [ ] automatically determine padding to prevent reflow of layout
+- [?] Currently no future tasks known.
 
 ## Known Issues
 None
