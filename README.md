@@ -26,7 +26,7 @@ This project contains a simple and full configurable jQuery plugin which asynchr
 The plugin can be easily configured during the initialization and the following parameters are currently available. The listing contains the parameters together with their default values.
 
 - `offset: 0,` | Offset in pixel. A negative offset will trigger loading earlier, a postive value later.
-- `fixHeight: false,` | Fix height of Google Maps `<iframe>` in dependence of height attribute.
+- `fixHeight: false,` | Fix height of Google Maps `<iframe>` in dependence of height attribute ([explanation](https://github.com/thexmanxyz/Async-Google-Maps#layout-reflow)).
 - `spinner: {` | Spinner options
     - `attach: false,` | Defines whether a spinner should be attached automatically.
     - `remove: false,` | Defines whether a spinner should be removed automatically after load.
