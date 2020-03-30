@@ -18,6 +18,8 @@
 
     // retrieve all map container(s), check and execute async load
     function checkAndLoadMaps(opts) {
+
+		// iterate over all map containers
         $(opts.containers).each(function () {
             var $container = $(this);
 
@@ -119,6 +121,8 @@
 
         // automatically attach inline min-height to prevent reflow
         setHeight: function(opts) {
+
+			// only if height should be fixed inline
             if(opts.fixHeight) {
 
                 // iterate over all map containers
