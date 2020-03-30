@@ -175,11 +175,11 @@
                     // create custom spinner
                     }else if (spinner.type == 'custom') {
 
-                        // create custom container by passed HTML
+                        // create custom spinner element by passed HTML
                         $spinnerDiv = $(spinner.customSpinner).addClass(spinner.spinnerClass);
                     }
 
-                    // prepend spinner container
+                    // prepend spinner to parent container
                     $(this).parent().prepend($spinnerDiv);
                 });
             }
