@@ -119,7 +119,7 @@
             return containerBottom > viewportTop && containerTop + opts.offset < viewportBottom;
         },
 
-        // automatically attach inline min-height to prevent reflow
+        // automatically attach inline min-height to prevent reflow - can be user customized
         setHeight: function(opts) {
 
 			// only if height should be fixed inline
