@@ -6,7 +6,7 @@ This project contains a simple and full configurable jQuery plugin which asynchr
 * jQuery core library
 
 ## Download / Installation
-1. [Download v1.1.0](https://github.com/thexmanxyz/Async-Google-Maps/archive/v1.1.0.zip) of Async Google Maps
+1. [Download v1.1.1](https://github.com/thexmanxyz/Async-Google-Maps/archive/v1.1.1.zip) of Async Google Maps
 2. Extract the files and copy them to your website folder
 3. Define the CSS and JS resource files in your HTML page. You can also place the `<script>` tag after your `<body>` content. Basic resource import example:
    * **JS:** `<script src="js/async-google-maps.min.js"></script>`
@@ -105,7 +105,33 @@ $('.g-maps').asyncGoogleMaps({
 });
 ```
 
-Please visit [Loading.io](https://loading.io/css/) to find out more on how you have to set the `customSpinner` parameter for each of the supported spinners. If you want to use the included CSS-Loader spinners,configure the plugin with the following parameters:
+Please visit [Loading.io](https://loading.io/css/) to find out more about the `customSpinner` parameter with is used to define each of the supported spinners. The following spinners are included:
+
+```<div class="lds-circle"><div></div></div>```
+
+```<div class="lds-dual-ring"></div>```
+
+```<div class="lds-facebook"><div></div><div></div><div></div></div>```
+
+```<div class="lds-heart"><div></div></div>```
+
+```<div class="lds-ring"><div></div><div></div><div></div><div></div></div>```
+
+```<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>```
+
+```<div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>```
+
+```<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>```
+
+```<div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>```
+
+```<div class="lds-hourglass"></div>```
+
+```<div class="lds-ripple"><div></div><div></div></div>```
+
+```<div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>```
+
+You can also use e.g. `lds-circle-small` to scale the spinner down to 75% of the original size. This works for every of the above outlined spinners. If you want to use the included CSS-Loader spinners, configure the plugin with the following parameters:
 
 ```Javascript
 $('.g-maps').asyncGoogleMaps({
@@ -118,7 +144,25 @@ $('.g-maps').asyncGoogleMaps({
 });
 ```
 
-If you want a different appearance for the CSS-Loader spinners change `load1` to `load2` - `load8` or `load1-small` - `load8-small`. More information about the supported CSS-Loader spinners can be found [here](https://projects.lukehaas.me/css-loaders/).
+If you want a different appearance for the CSS-Loader spinners change `load1` to `load2` - `load8` or `load1-small` - `load8-small`. More information about the supported CSS-Loader spinners can be found [here](https://projects.lukehaas.me/css-loaders/). The following spinners are included:
+
+```<div class="load1 loader">Loading...</div>```
+
+```<div class="load2 loader">Loading...</div>```
+
+```<div class="load3 loader">Loading...</div>```
+
+```<div class="load4 loader">Loading...</div>```
+
+```<div class="load5 loader">Loading...</div>```
+
+```<div class="load6 loader">Loading...</div>```
+
+```<div class="load7 loader">Loading...</div>```
+
+```<div class="load8 loader">Loading...</div>```
+
+You can also use e.g. `load1-small` to scale the spinner down to 50% of the original size.
 
 ### Layout Reflow
 

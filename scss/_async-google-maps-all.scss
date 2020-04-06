@@ -41,7 +41,7 @@ $primary: #000 !default;
   /* Loading.io CSS spinner, credits @ https://github.com/loadingio/css-spinner/ */
 
   /* circle */
-  &.lds-circle {
+  &.lds-circle, &.lds-circle-small {
     display: inline-block;
     width: 64px;
     height: 64px;
@@ -50,9 +50,15 @@ $primary: #000 !default;
     background: $primary;
     animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
   }
+  
+  /* circle-small */
+  &.lds-circle-small {
+    width: 48px;
+    height: 48px;
+  }
 
   /* default */
-  &.lds-default {
+  &.lds-default, &.lds-default-small {
     display: inline-block;
     position: relative;
     width: 80px;
@@ -129,8 +135,13 @@ $primary: #000 !default;
     }
   }
 
-  /* dual ring */
-  &.lds-dual-ring {
+  /* default-small */
+  &.lds-default-small {
+    transform: scale(0.75);
+  }
+
+  /* dual-ring */
+  &.lds-dual-ring, &.lds-dual-ring-small {
     display: inline-block;
     width: 80px;
     height: 80px;
@@ -148,8 +159,13 @@ $primary: #000 !default;
     }
   }
 
+  /* dual-ring-small */
+  &.lds-dual-ring-small {
+    transform: scale(0.75);
+  }
+
   /* ellipsis */
-  &.lds-ellipsis {
+  &.lds-ellipsis, &.lds-ellipsis-small {
     display: inline-block;
     position: relative;
     width: 80px;
@@ -183,8 +199,13 @@ $primary: #000 !default;
     }
   }
 
+  /* ellipsis */
+  &.lds-ellipsis-small {
+    transform: scale(0.75);
+  }
+
   /* facebook */
-  &.lds-facebook {
+  &.lds-facebook, &.lds-facebook-small {
     display: inline-block;
     position: relative;
     width: 80px;
@@ -213,8 +234,13 @@ $primary: #000 !default;
     }
   }  
 
+  /* facebook-small */
+  &.lds-facebook-small {
+    transform: scale(0.75);
+  }
+
   /* grid */
-  &.lds-grid {
+  &.lds-grid, &.lds-grid-small {
     display: inline-block;
     position: relative;
     width: 80px;
@@ -276,8 +302,13 @@ $primary: #000 !default;
     }
   }
 
+  /* grid-small */
+  &.lds-grid-small {
+    transform: scale(0.75);  
+  }
+
   /* heart */
-  &.lds-heart {
+  &.lds-heart, &.lds-heart-small {
     display: inline-block;
     position: relative;
     width: 80px;
@@ -314,8 +345,13 @@ $primary: #000 !default;
     }
   }
 
+  /* heart-small */
+  &.lds-heart-small {
+    transform: rotate(45deg) scale(0.75);
+  }
+
   /* ring */
-  &.lds-ring {
+  &.lds-ring, &.lds-ring-small {
     display: inline-block;
     position: relative;
     width: 80px;
@@ -345,8 +381,13 @@ $primary: #000 !default;
     }
   }
 
+  /* ring-small */
+  &.lds-ring-small {
+    transform: scale(0.75);
+  }
+
   /* hourglass */
-  &.lds-hourglass {
+  &.lds-hourglass, &.lds-hourglass-small {
     display: inline-block;
     position: relative;
     width: 80px;
@@ -366,8 +407,13 @@ $primary: #000 !default;
     }
   }
 
+  /* hourglass-small */
+  &.lds-hourglass-small {
+    transform: scale(0.75);
+  }
+
   /* ripple */
-  &.lds-ripple {
+  &.lds-ripple, &.lds-ripple-small {
     display: inline-block;
     position: relative;
     width: 80px;
@@ -386,8 +432,13 @@ $primary: #000 !default;
     }
   }
 
+  /* ripple-small */
+  &.lds-ripple-small {
+    transform: scale(0.75);
+  }
+
   /* roller */
-  &.lds-roller {
+  &.lds-roller, &.lds-roller-small {
     display: inline-block;
     position: relative;
     width: 80px;
@@ -473,9 +524,14 @@ $primary: #000 !default;
       }
     }
   }
-  
+
+  /* roller-small */
+  &.lds-roller-small {
+    transform: scale(0.75);
+  }
+
   /* spinner */
-  &.lds-spinner {
+  &.lds-spinner, &.lds-spinner-small {
     color: official;
     display: inline-block;
     position: relative;
@@ -546,6 +602,11 @@ $primary: #000 !default;
         animation-delay: 0s;
       }
     }
+  }
+
+  /* spinner-small */
+  &.lds-spinner-small {
+    transform: scale(0.75);
   }
 
   /* CSS-Loader CSS spinner, credits @ https://github.com/lukehaas/css-loaders */
