@@ -181,7 +181,7 @@ $('.g-maps').asyncGoogleMaps({
 });
 ```
 
-If you want a different appearance for the CSS-Loader spinners change `load1` to `load2` - `load8` or `load1-small` - `load8-small`. More information about the supported CSS-Loader spinners can be found [here](https://projects.lukehaas.me/css-loaders/). The following spinners are included:
+If you want a different appearance for the CSS-Loader spinners change `load1` to `load2` - `load8` (~64px) or `load1-small` - `load8-small` (~48px). More information about the supported CSS-Loader spinners can be found [here](https://projects.lukehaas.me/css-loaders/). The following spinners are included:
 
 ```
 <div class="load1 loader">Loading...</div>
@@ -215,7 +215,7 @@ If you want a different appearance for the CSS-Loader spinners change `load1` to
 <div class="load8 loader">Loading...</div>
 ```
 
-You can also use e.g. `load1-small` to scale the spinner down to 50% of the original size.
+You can also use e.g. `load1-small` (~80px) to scale the spinner down to 50% of the original size (~110px). The included simple spinner occupies (~32px). Feel free to change the size for your desired spinner appropriately.
 
 ### Layout Reflow
 
