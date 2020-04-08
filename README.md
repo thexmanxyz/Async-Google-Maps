@@ -107,29 +107,66 @@ $('.g-maps').asyncGoogleMaps({
 
 Please visit [Loading.io](https://loading.io/css/) to find out more about the `customSpinner` parameter with is used to define each of the supported spinners. The following spinners are included:
 
-```<div class="lds-circle"><div></div></div>```
+**Circle:**
 
-```<div class="lds-dual-ring"></div>```
+```
+<div class="lds-circle"><div></div></div>
+```
 
-```<div class="lds-facebook"><div></div><div></div><div></div></div>```
+**Dual Ring:**
+```
+<div class="lds-dual-ring"></div>
+```
 
-```<div class="lds-heart"><div></div></div>```
+**Facebook:**
+```
+<div class="lds-facebook"><div></div><div></div><div></div></div>
+```
 
-```<div class="lds-ring"><div></div><div></div><div></div><div></div></div>```
+**Heart:**
+```
+<div class="lds-heart"><div></div></div>
+```
 
-```<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>```
+**Ring:**
+```
+<div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+```
 
-```<div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>```
+**Roller:**
+```
+<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+```
 
-```<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>```
+**Default:**
+```
+<div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+```
 
-```<div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>```
+**Ellipsis:**
+```
+<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+```
 
-```<div class="lds-hourglass"></div>```
+**Grid:**
+```
+<div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+```
 
-```<div class="lds-ripple"><div></div><div></div></div>```
+**Hourglass:**
+```
+<div class="lds-hourglass"></div>
+```
 
-```<div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>```
+**Ripple:**
+```
+<div class="lds-ripple"><div></div><div></div></div>
+```
+
+**Spinner:**
+```
+<div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+```
 
 You can also use e.g. `lds-circle-small` to scale the spinner down to 75% of the original size. This works for every of the above outlined spinners. If you want to use the included CSS-Loader spinners, configure the plugin with the following parameters:
 
@@ -146,21 +183,37 @@ $('.g-maps').asyncGoogleMaps({
 
 If you want a different appearance for the CSS-Loader spinners change `load1` to `load2` - `load8` or `load1-small` - `load8-small`. More information about the supported CSS-Loader spinners can be found [here](https://projects.lukehaas.me/css-loaders/). The following spinners are included:
 
-```<div class="load1 loader">Loading...</div>```
+```
+<div class="load1 loader">Loading...</div>
+```
 
-```<div class="load2 loader">Loading...</div>```
+```
+<div class="load2 loader">Loading...</div>
+```
 
-```<div class="load3 loader">Loading...</div>```
+```
+<div class="load3 loader">Loading...</div>
+```
 
-```<div class="load4 loader">Loading...</div>```
+```
+<div class="load4 loader">Loading...</div>
+```
 
-```<div class="load5 loader">Loading...</div>```
+```
+<div class="load5 loader">Loading...</div>
+```
 
-```<div class="load6 loader">Loading...</div>```
+```
+<div class="load6 loader">Loading...</div>
+```
 
-```<div class="load7 loader">Loading...</div>```
+```
+<div class="load7 loader">Loading...</div>
+```
 
-```<div class="load8 loader">Loading...</div>```
+```
+<div class="load8 loader">Loading...</div>
+```
 
 You can also use e.g. `load1-small` to scale the spinner down to 50% of the original size.
 
