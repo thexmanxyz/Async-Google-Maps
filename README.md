@@ -248,7 +248,7 @@ or take a look at the following CSS:
 * fully customizable through different callback methods at important execution points
 
 ## Future Tasks
-- [] Create better scaling scheme for the Loading.io spinners (64/48px), the CSS-Loader spinners (110/55px) and the included simple spinner (32px).
+- [ ] Create better scaling scheme for the Loading.io spinners (64/48px), the CSS-Loader spinners (110/55px) and the included simple spinner (32px).
 
 ## Known Issues
 None
