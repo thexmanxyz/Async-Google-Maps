@@ -168,7 +168,7 @@ Please visit [Loading.io](https://loading.io/css/) to find out more about the `c
 <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 ```
 
-You can also use e.g. `lds-circle-small` to scale the spinner down to 75% of the original size. This works for every of the above outlined spinners. If you want to use the included CSS-Loader spinners, configure the plugin with the following parameters:
+You can also use e.g. `lds-circle-small` to scale the spinner down to 75% (~48px) of the original size (~64px). This works for every of the above outlined spinners. If you want to use the included CSS-Loader spinners, configure the plugin with the following parameters:
 
 ```Javascript
 $('.g-maps').asyncGoogleMaps({
@@ -181,7 +181,7 @@ $('.g-maps').asyncGoogleMaps({
 });
 ```
 
-If you want a different appearance for the CSS-Loader spinners change `load1` to `load2` - `load8` (~64px) or `load1-small` - `load8-small` (~48px). More information about the supported CSS-Loader spinners can be found [here](https://projects.lukehaas.me/css-loaders/). The following spinners are included:
+If you want a different appearance for the CSS-Loader spinners change `load1` to `load2` - `load8` or `load1-small` - `load8-small`. More information about the supported CSS-Loader spinners can be found [here](https://projects.lukehaas.me/css-loaders/). The following spinners are included:
 
 ```
 <div class="load1 loader">Loading...</div>
@@ -215,7 +215,7 @@ If you want a different appearance for the CSS-Loader spinners change `load1` to
 <div class="load8 loader">Loading...</div>
 ```
 
-You can also use e.g. `load1-small` (~80px) to scale the spinner down to 50% of the original size (~110px). The included simple spinner occupies (~32px). Feel free to change the size for your desired spinner appropriately.
+With the class `load1-small` the spinner is scaled down to 50% of the original size (~110px) which equals ~ 55px in width and height. The included simple spinner occupies (~32px). Feel free to change the size for your desired spinner appropriately.
 
 ### Layout Reflow
 
