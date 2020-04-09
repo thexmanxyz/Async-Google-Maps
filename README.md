@@ -21,7 +21,6 @@ This project contains a simple and full configurable jQuery plugin which asynchr
    ```HTML
    <link href="css/async-google-maps.min.css" rel="stylesheet">
    ```
-
    * **SCSS:** if you want to use SCSS instead, only necessary for spinner
        * `_async-google-maps.scss` for simple included spinner
        * `_async-google-maps-lio.scss` for [Loading.io](https://loading.io/css/) pure CSS spinners
@@ -30,7 +29,6 @@ This project contains a simple and full configurable jQuery plugin which asynchr
    ```SCSS
    @import 'async-google-maps.scss';
    ```
-
 4. Initialize the plugin with basic values as follows:
    ```JS
    $('.g-maps').asyncGoogleMaps({});
