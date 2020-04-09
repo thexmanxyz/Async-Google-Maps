@@ -14,19 +14,23 @@ This project contains a simple and full configurable jQuery plugin which asynchr
    <script src="js/async-google-maps.min.js"></script>
    ```
    * **CSS:** only necessary for spinner
-   ```HTML
-   <link href="css/async-google-maps.min.css" rel="stylesheet">
-   ```
+       * `async-google-maps.min.css` for simple included spinner
        * `async-google-maps-lio.min.css` for [Loading.io](https://loading.io/css/) pure CSS spinners
        * `async-google-maps-cl.min.css` for [CSS-Loader](https://projects.lukehaas.me/css-loaders/) pure CSS spinners
        * `async-google-maps-all.min.css` includes all spinners but bigger footsprint
-   * **SCSS:** if you want to use SCSS instead (only necessary for spinner)
-   ```SCSS
-   @import 'async-google-maps.scss';
+   ```HTML
+   <link href="css/async-google-maps.min.css" rel="stylesheet">
    ```
+
+   * **SCSS:** if you want to use SCSS instead, only necessary for spinner
+       * `_async-google-maps.scss` for simple included spinner
        * `_async-google-maps-lio.scss` for [Loading.io](https://loading.io/css/) pure CSS spinners
        * `_async-google-maps-cl.scss` for [CSS-Loader](https://projects.lukehaas.me/css-loaders/) pure CSS spinners
        * `_async-google-maps-all.scss` includes all spinners but bigger footsprint
+   ```SCSS
+   @import 'async-google-maps.scss';
+   ```
+
 4. Initialize the plugin with basic values as follows:
    ```JS
    $('.g-maps').asyncGoogleMaps({});
