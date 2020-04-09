@@ -9,17 +9,34 @@ This project contains a simple and full configurable jQuery plugin which asynchr
 1. [Download v1.1.1](https://github.com/thexmanxyz/Async-Google-Maps/archive/v1.1.1.zip) of Async Google Maps
 2. Extract the files and copy them to your website folder
 3. Define the CSS and JS resource files in your HTML page. You can also place the `<script>` tag after your `<body>` content. Basic resource import example:
-   * **JS:** `<script src="js/async-google-maps.min.js"></script>`
-   * **CSS:** `<link href="css/async-google-maps.min.css" rel="stylesheet">` (only necessary for spinner)
+   * **JS:**
+   ```HTML
+   <script src="js/async-google-maps.min.js"></script>
+   ```
+   * **CSS:** only necessary for spinner
+   ```HTML
+   <link href="css/async-google-maps.min.css" rel="stylesheet">
+   ```
        * `async-google-maps-lio.min.css` for [Loading.io](https://loading.io/css/) pure CSS spinners
        * `async-google-maps-cl.min.css` for [CSS-Loader](https://projects.lukehaas.me/css-loaders/) pure CSS spinners
        * `async-google-maps-all.min.css` includes all spinners but bigger footsprint
-   * **SCSS:** if you want to use SCSS instead `@import 'async-google-maps.scss';` (only necessary for spinner)
+   * **SCSS:** if you want to use SCSS instead (only necessary for spinner)
+   ```SCSS
+   @import 'async-google-maps.scss';
+   ```
        * `_async-google-maps-lio.scss` for [Loading.io](https://loading.io/css/) pure CSS spinners
        * `_async-google-maps-cl.scss` for [CSS-Loader](https://projects.lukehaas.me/css-loaders/) pure CSS spinners
        * `_async-google-maps-all.scss` includes all spinners but bigger footsprint
-4. Initialize the plugin with basic values as follows
-   * **Plugin Initialization:** `$('.g-maps').asyncGoogleMaps({});` or `jQuery('.g-maps').asyncGoogleMaps({});`
+4. Initialize the plugin with basic values as follows:
+   ```JS
+   $('.g-maps').asyncGoogleMaps({});
+   ```
+   
+   or
+
+   ```JS
+   jQuery('.g-maps').asyncGoogleMaps({});
+   ```
 5. If you want to further customize the appearance or behavior please take a closer look on the plugin parameters and their explanation listed in the next section.
 
 ## Configuration and Parameters
