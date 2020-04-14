@@ -16,54 +16,57 @@
 
 (function( $ ) {
 
+    // all configurations
+    var config;
+
     // retrieve all map container(s), check and execute async load
-    function checkAndLoadMaps(opts) {
+    function checkAndLoadMaps() {
 
         // iterate over all map containers
-        $(opts.containers).each(function () {
+        $(config.containers).each(function () {
             var $container = $(this);
 
             // only load Google Maps if the src attribute is not set, 
             // data-src attribute exists and container is in viewport
             // this prevents double loading of the same Google Maps iframe
             if (!$container.attr('src') && $container.attr('data-src')
-                && opts.isInViewport.call($container, opts)) {
+                && config.isInViewport.call($container)) {
 
                 // callback before load initiated
-                opts.beforeLoad.call($container, opts);
+                config.beforeLoad.call($container);
 
                 // load map
                 $container.attr('src', $container.attr('data-src'));
 
                 // remove a predefined spinner if enabled
-                if(opts.spinner.remove) {
-                    opts.removeSpinner.call($container, opts);
+                if(config.spinner.remove) {
+                    config.removeSpinner.call($container);
                 }
 
                 // callback after load initiated
-                opts.afterLoad.call($container, opts);
+                config.afterLoad.call($container);
             }
        });
     }
 
     // initialize plugin and create events(s)
     $.fn.asyncGoogleMaps = function(options) {
-        var opts = $.extend(true, {}, $.fn.asyncGoogleMaps.defaults, options);
+        config = $.extend(true, {}, $.fn.asyncGoogleMaps.defaults, options);
 
         // set containers containing maps
-        opts.containers = this;
+        config.containers = this;
 
         // attach inline min-height
-        opts.setHeight(opts);
+        config.setHeight();
 
         // attach spinner if necessary
-        opts.attachSpinner(opts);
+        config.attachSpinner();
 
         // add trigger event (scroll, resize)
-        opts.triggerAsyncLoad(opts);
+        config.triggerAsyncLoad();
 
         // initial check, if already in viewport
-        opts.checkAndLoad(opts); 
+        config.checkAndLoad(); 
     };
 
    /* default values
@@ -103,9 +106,9 @@
             delay: 10000
         },
 
-        // determine if container is in viewport - can be user customized
+        // determine if container is in viewport
         // credits @ https://stackoverflow.com/a/33979503/2379196
-        isInViewport: function (opts) {
+        isInViewport: function () {
 
             // container bounds
             var containerTop = $(this).offset().top;
@@ -116,17 +119,17 @@
             var viewportBottom = viewportTop + $(window).height();
 
             // detect if container is in viewport
-            return containerBottom > viewportTop && containerTop + opts.offset < viewportBottom;
+            return containerBottom > viewportTop && containerTop + config.offset < viewportBottom;
         },
 
-        // automatically attach inline min-height to prevent reflow - can be user customized
-        setHeight: function(opts) {
+        // automatically attach inline min-height to prevent reflow
+        setHeight: function() {
 
             // only if height should be fixed inline
-            if(opts.fixHeight) {
+            if(config.fixHeight) {
 
                 // iterate over all map containers
-                $(opts.containers).each(function () {
+                $(config.containers).each(function () {
                     
                     var height = $(this).attr('height');
                     if(typeof height !== 'undefined') {
@@ -136,28 +139,28 @@
             }
         },
 
-        // remove a predefined spinner from the parent container of the map - can be user customized
-        removeSpinner: function(opts) {
+        // remove a predefined spinner from the parent container of the map
+        removeSpinner: function() {
 
             // remove spinner within parent container
             var hFunc = function() { 
-                $(this).parent().find('.' + opts.spinner.spinnerClass).remove();
+                $(this).parent().find('.' + config.spinner.spinnerClass).remove();
             };
 
             // wait a specific time in milliseconds before removing spinner
-            setTimeout(hFunc.bind(this), opts.spinner.delay);
+            setTimeout(hFunc.bind(this), config.spinner.delay);
         },
 
-        // attach a predefined spinner to the parent container of the map - can be user customized
-        attachSpinner: function(opts) {
-            var spinner = opts.spinner;
+        // attach a predefined spinner to the parent container of the map
+        attachSpinner: function() {
+            var spinner = config.spinner;
             var $spinnerDiv;
 
             // if spinner should be attached
             if(spinner.attach) {
 
                 // iterate over all map containers
-                $(opts.containers).each(function () {
+                $(config.containers).each(function () {
 
                     // create bootstrap spinner
                     if(spinner.type == 'bootstrap') {
@@ -185,19 +188,19 @@
             }
         },
 
-        // append trigger event - can be user customized
-        triggerAsyncLoad: function (opts) {
-            $(window).on('resize scroll', function() { opts.checkAndLoad(opts) });
+        // append trigger event
+        triggerAsyncLoad: function () {
+            $(window).on('resize scroll', function() { config.checkAndLoad() });
         },
 
-        // check and load map(s) - can be user customized
-        checkAndLoad: function(opts) { checkAndLoadMaps(opts) },
+        // check and load map(s)
+        checkAndLoad: function() { checkAndLoadMaps() },
 
-        // before load initiated - can be user customized
-        beforeLoad: function(opts) {},
+        // before load initiated
+        beforeLoad: function() {},
 
-        // after load initiated - can be user customized
-        afterLoad: function(opts) {}
+        // after load initiated
+        afterLoad: function() {}
     };
 
 })( jQuery );
