@@ -38,15 +38,15 @@ Please mind the following stylesheets resources and their explanation when you w
 
    * **CSS:**
        * `async-google-maps.min.css` for simple included spinner (< 2kB)
-       * `async-google-maps-lio.min.css` for [Loading.io](https://loading.io/css/) pure CSS spinners
-       * `async-google-maps-cl.min.css` for [CSS-Loader](https://projects.lukehaas.me/css-loaders/) pure CSS spinners
-       * `async-google-maps-all.min.css` includes all spinners but bigger footsprint
+       * `async-google-maps-lio.min.css` for [Loading.io](https://loading.io/css/) pure CSS spinners (< 17kB)
+       * `async-google-maps-cl.min.css` for [CSS-Loader](https://projects.lukehaas.me/css-loaders/) pure CSS spinners (< 18kB)
+       * `async-google-maps-all.min.css` includes all spinners but bigger footsprint (< 34kB)
 
    * **SCSS:**
        * `_async-google-maps.scss` for simple included spinner (< 2kB)
-       * `_async-google-maps-lio.scss` for [Loading.io](https://loading.io/css/) pure CSS spinners
-       * `_async-google-maps-cl.scss` for [CSS-Loader](https://projects.lukehaas.me/css-loaders/) pure CSS spinners
-       * `_async-google-maps-all.scss` includes all spinners but bigger footsprint
+       * `_async-google-maps-lio.scss` for [Loading.io](https://loading.io/css/) pure CSS spinners (< 17kB)
+       * `_async-google-maps-cl.scss` for [CSS-Loader](https://projects.lukehaas.me/css-loaders/) pure CSS spinners (< 18kB)
+       * `_async-google-maps-all.scss` includes all spinners but bigger footsprint (< 34kB)
 
 ## Configuration and Parameters
 The plugin can be easily configured during the initialization and the following parameters are currently available. The listing contains the parameters together with their default values.
