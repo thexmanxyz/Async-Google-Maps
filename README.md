@@ -74,7 +74,6 @@ The plugin can be easily configured during the initialization and the following 
 - `afterLoad: function(){ ... }` | Called after the async load was initiated.
 
 ### Google Maps `<iframe>`
-
 To make this plugin working for your Google Maps `<iframe>` please change the `src`-attribute to `data-src` and add the class `g-maps` e.g.:
 
 ```HTML
@@ -82,7 +81,6 @@ To make this plugin working for your Google Maps `<iframe>` please change the `s
 ```
 
 ### Examples
-
 The following example shows how you can specify plugin parameters to change the default offset and remove a pre-defined spinner.
 
 ```Javascript
@@ -106,7 +104,6 @@ $('.g-maps').asyncGoogleMaps({
 ```
 
 ### Advanced Spinner Usage
-
 If you want to use a Bootstrap 4 spinner, configure the plugin with the following parameters:
 
 ```Javascript
@@ -245,7 +242,6 @@ If you want a different appearance for the CSS-Loader spinners change `load1` to
 With the class `load1-small` the spinner is scaled down to 50% of the original size (~110px) which equals ~ 55px in width and height. The included simple spinner occupies (~32px). Feel free to change the size for your desired spinner appropriately.
 
 ### Layout Reflow
-
 If you load content and elements asynchronously please be aware that it is necessary to reserve space for the Google Maps container. This is necessary to prevent container resizing which leads to a unpleasant rearrangement of the page layout during loading. To counter this drawback please use the following plugin configuration:
 
 ```JS
@@ -261,7 +257,6 @@ or take a look at the following CSS:
 ```
 
 ## Features
-
 * load Google Maps asynchronously to get better Google PageSpeed Insights rating
 * offset to load Google Maps at the desired scroll position
 * full-fledged spinner configuration used as placeholder while map loads
@@ -286,7 +281,6 @@ None
 * [Loading.io CSS-Spinner](https://loading.io/css/)
 
 ## Credits
-
 Thanks to the jQuery team for this [great plugin tutorial](https://learn.jquery.com/plugins/basic-plugin-creation/).
 
 Thanks to [Loading.io](https://loading.io) for providing a fancy [set of spinners](https://github.com/loadingio/css-spinner/).
