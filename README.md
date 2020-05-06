@@ -37,13 +37,13 @@ This project contains a simple and full configurable jQuery plugin which asynchr
 Please mind the following stylesheets resources and their explanation when you want to adjust the spinner type. This influences the footprint of your site but you can also omit the `<link>` tag completely if you don't need a spinner.
 
    * **CSS:**
-       * `async-google-maps.min.css` for simple included spinner
+       * `async-google-maps.min.css` for simple included spinner (< 2kB)
        * `async-google-maps-lio.min.css` for [Loading.io](https://loading.io/css/) pure CSS spinners
        * `async-google-maps-cl.min.css` for [CSS-Loader](https://projects.lukehaas.me/css-loaders/) pure CSS spinners
        * `async-google-maps-all.min.css` includes all spinners but bigger footsprint
 
    * **SCSS:**
-       * `_async-google-maps.scss` for simple included spinner
+       * `_async-google-maps.scss` for simple included spinner (< 2kB)
        * `_async-google-maps-lio.scss` for [Loading.io](https://loading.io/css/) pure CSS spinners
        * `_async-google-maps-cl.scss` for [CSS-Loader](https://projects.lukehaas.me/css-loaders/) pure CSS spinners
        * `_async-google-maps-all.scss` includes all spinners but bigger footsprint
@@ -64,14 +64,14 @@ The plugin can be easily configured during the initialization and the following 
     - `bsSpinnerClass: 'spinner-border',` | The Bootstrap spinner class. Either `'spinner-border'` or `'spinner-grow'`.
     - `customSpinner: '',` | Any custom spinner container passed as HTML can be used here.
     - `delay: 10000},` | Time in milliseconds waited before the spinner is removed.
-- `isInViewport: function(){ ... },` | Function to determine if container is in viewport (callback).
-- `setHeight: function(){ ... },` | Function that sets `min-height` for the Google Maps `<iframe>` (callback).
-- `attachSpinner: function() { ... },` | Function to define the spinner attach behavior (callback).
-- `removeSpinner: function(){ ... },` | Function to define the spinner removal behavior (callback).
-- `triggerAsyncLoad: function(){ ... },` | Function to define when the maps should be loaded (callback).
-- `checkAndLoad: function(){ ... },` | Function which calls the async load and check routine (callback).
-- `beforeLoad: function(){ ... },` | Function called before the async load was initiated (callback).
-- `afterLoad: function(){ ... }` | Function called after the async load was initiated (callback).
+- `isInViewport: function(){ ... },` | Determines if container is in viewport.
+- `setHeight: function(){ ... },` | Sets `min-height` for the Google Maps `<iframe>`.
+- `attachSpinner: function() { ... },` |Defines the spinner attach behavior.
+- `removeSpinner: function(){ ... },` | Defines the spinner removal behavior.
+- `triggerAsyncLoad: function(){ ... },` | Defines when the maps should be loaded.
+- `checkAndLoad: function(){ ... },` | Calls the async load and check routine.
+- `beforeLoad: function(){ ... },` | Called before the async load was initiated.
+- `afterLoad: function(){ ... }` | Called after the async load was initiated.
 
 ### Google Maps `<iframe>`
 
@@ -81,7 +81,7 @@ To make this plugin working for your Google Maps `<iframe>` please change the `s
 <iframe class="g-maps" data-src="{your-google-maps-url}" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
 ```
 
-### Using Spinners / Examples
+### Examples
 
 The following example shows how you can specify plugin parameters to change the default offset and remove a pre-defined spinner.
 
@@ -104,6 +104,8 @@ $('.g-maps').asyncGoogleMaps({
   }
 });
 ```
+
+### Advanced Spinner Usage
 
 If you want to use a Bootstrap 4 spinner, configure the plugin with the following parameters:
 
