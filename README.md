@@ -9,15 +9,15 @@ This project contains a simple and full configurable jQuery plugin which asynchr
 1. [Download v1.2.0](https://github.com/thexmanxyz/Async-Google-Maps/archive/v1.2.0.zip) of Async Google Maps
 2. Extract the files and copy them to your website folder
 3. Define the CSS and JS resource files in your HTML page. You can also place the `<script>` tag after your `<body>` content. Basic resource import example:
-   * **JS:**
+   * **JS (< 3kB):**
    ```HTML
    <script src="js/async-google-maps.min.js"></script>
    ```
-   * **CSS:** only necessary for spinner
+   * **CSS (< 2kB):** only necessary for spinner
    ```HTML
    <link href="css/async-google-maps.min.css" rel="stylesheet">
    ```
-   * **SCSS:** if you want to use SCSS instead, only necessary for spinner
+   * **SCSS (< 2kB):** if you want to use SCSS instead, only necessary for spinner
    ```SCSS
    @import 'async-google-maps.scss';
    ```
